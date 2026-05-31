@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImfuyoSync.Views.Contributors.AddContributionPage"
+            BackgroundColor="{StaticResource BoneWhite}"
+             Title="Add Contribution">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+
+            <Label Text="Amount (R)" />
+            <Entry Keyboard="Numeric"
+                   Text="{Binding Amount}" />
+
+            <Button Text="Save Contribution"
+                    Margin="0,20,0,0"
+                    Command="{Binding SaveCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

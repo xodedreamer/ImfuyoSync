@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImfuyoSync.Views.Animals.AddAnimalPage"
+             BackgroundColor="{StaticResource BoneWhite}"
+             Title="Add Animal">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+
+            <Label Text="Tag Number" />
+            <Entry Text="{Binding TagNumber}" />
+
+            <Label Text="Species" />
+            <Picker ItemsSource="{Binding SpeciesList}"
+                    SelectedItem="{Binding SelectedSpecies}" />
+
+            <Label Text="Breed" />
+            <Picker ItemsSource="{Binding BreedList}"
+                    SelectedItem="{Binding SelectedBreed}" />
+
+            <Label Text="Color" />
+            <Picker ItemsSource="{Binding ColorList}"
+                    SelectedItem="{Binding SelectedColor}" />
+
+            <Button Text="Save Animal"
+                    Margin="0,20,0,0"
+                    Command="{Binding SaveCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

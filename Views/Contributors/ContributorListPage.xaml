@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImfuyoSync.Views.Contributors.ContributorListPage"
+             Title="ContributorListPage">
+    <CollectionView ItemsSource="{Binding Contributors}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border Style="{StaticResource CardBorderStyle}">
+                    <Grid ColumnDefinitions="*,Auto">
+
+                        <!-- LEFT SIDE: NAME + PHONE + BALANCE -->
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource EarthBrown}" />
+
+                            <Label Text="{Binding Phone}"
+                                   FontSize="14"
+                                   TextColor="{StaticResource DeepForestGreen}" />
+
+                            <Label Text="{Binding Balance, StringFormat='Balance: R{0:F2}'}"
+                                   FontSize="14"
+                                   TextColor="{StaticResource ClayOrange}" />
+                        </VerticalStackLayout>
+
+                        <!-- RIGHT SIDE: ARROW -->
+                        <Label Grid.Column="1"
+                               Text="›"
+                               FontSize="28"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource ClayOrange}" />
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>

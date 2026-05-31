@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImfuyoSync.Views.Contributors.ContributorDetailsPage"
+                  BackgroundColor="{StaticResource BoneWhite}"
+             Title="Contributor Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+
+            <!-- HEADER CARD -->
+            <Border Style="{StaticResource CardBorderStyle}">
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding Name}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource EarthBrown}" />
+
+                    <Label Text="{Binding Phone}"
+                           FontSize="16"
+                           TextColor="{StaticResource DeepForestGreen}" />
+
+                    <Label Text="{Binding Balance, StringFormat='Balance: R{0:F2}'}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource ClayOrange}"
+                           Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ACTION BUTTONS -->
+            <Button Text="Add Contribution"
+                    BackgroundColor="{StaticResource DeepForestGreen}"
+                    Margin="0,20,0,0"
+                    Command="{Binding AddContributionCommand}" />
+
+            <Button Text="Add Reimbursement"
+                    BackgroundColor="{StaticResource ClayOrange}"
+                    Margin="0,10,0,0"
+                    Command="{Binding AddReimbursementCommand}" />
+
+            <Button Text="View History"
+                    BackgroundColor="{StaticResource EarthBrown}"
+                    Margin="0,10,0,0"
+                    Command="{Binding ViewHistoryCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
